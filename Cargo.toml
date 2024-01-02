@@ -8,11 +8,17 @@ crate-type = ["cdylib"]
 
 [dependencies]
 async-std = "1.12.0"
+futures = "0.3.30"
+futures-timer = "3.0.2"
+libp2p-identity = { version = "0.2.8", features = ["secp256k1"] }
+libp2p-tls = "0.3.0"
+multiaddr = "0.18.1"
 # Default enable napi4 feature, see https://nodejs.org/api/n-api.html#node-api-version-matrix
-napi = { version = "2.12.2", default-features = false, features = ["napi4"] }
+napi = { version = "2.12.2", default-features = false, features = ["full"] }
 napi-derive = "2.12.2"
 quinn = "0.10.2"
-rustls = "0.21.9"
+ring = "0.16.20"
+rustls = "0.22.1"
 tokio = "1.34.0"
 
 [build-dependencies]

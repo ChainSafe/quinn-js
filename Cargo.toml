@@ -14,8 +14,8 @@ libp2p-identity = { version = "0.2.8", features = ["secp256k1"] }
 libp2p-tls = "0.3.0"
 multiaddr = "0.18.1"
 # Default enable napi4 feature, see https://nodejs.org/api/n-api.html#node-api-version-matrix
-napi = { version = "2.12.2", default-features = false, features = ["full"] }
-napi-derive = "2.12.2"
+napi = { version = "2.12.2", default-features = true, features = ["full"] }
+napi-derive = { version = "2.12.2", default-features = true }
 quinn = "0.10.2"
 ring = "0.16.20"
 rustls = "0.22.1"

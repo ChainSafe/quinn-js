@@ -1,0 +1,1 @@
+import * as bindings from "./binding";

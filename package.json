@@ -3,6 +3,26 @@
   "version": "0.0.0",
   "main": "index.js",
   "types": "index.d.ts",
+  "scripts": {
+    "artifacts": "napi artifacts",
+    "build": "yarn build:napi && yarn build:tsc",
+    "build:tsc": "tsc",
+    "build:napi": "napi build --platform --release --js lib/binding.js --dts lib/binding.d.ts",
+    "build:debug": "napi build --platform",
+    "prepublishOnly": "napi prepublish -t npm",
+    "test": "ava",
+    "universal": "napi universal",
+    "version": "napi version"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "@libp2p/peer-id-factory": "^4.0.2",
+    "@napi-rs/cli": "^2.16.5",
+    "ava": "^5.1.1",
+    "typescript": "^5.3.3",
+    "ts-node": "^10.9.2"
+  },
+  "packageManager": "yarn@1.22.21",
   "napi": {
     "name": "quinn-js",
     "triples": {
@@ -13,25 +33,10 @@
     }
   },
   "license": "MIT",
-  "devDependencies": {
-    "@libp2p/peer-id-factory": "^4.0.2",
-    "@napi-rs/cli": "^2.16.5",
-    "ava": "^5.1.1"
-  },
   "ava": {
     "timeout": "3m"
   },
   "engines": {
     "node": ">= 10"
-  },
-  "scripts": {
-    "artifacts": "napi artifacts",
-    "build": "napi build --platform --release",
-    "build:debug": "napi build --platform",
-    "prepublishOnly": "napi prepublish -t npm",
-    "test": "ava",
-    "universal": "napi universal",
-    "version": "napi version"
-  },
-  "packageManager": "yarn@4.0.2"
+  }
 }
